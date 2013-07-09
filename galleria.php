@@ -8,11 +8,11 @@
 
 //add galleria js
 
-function terminus_scripts_galleria() {
+function _sf_scripts_galleria() {
 	wp_enqueue_script('galleria', get_stylesheet_directory_uri().'/js/galleria-1.2.9.js', array('jquery'), false, true);
 	wp_enqueue_style('galleria', get_stylesheet_directory_uri().'/css/galleria.classic.css');
 }
-add_action('wp_enqueue_scripts', 'terminus_scripts_galleria', 10);
+add_action('wp_enqueue_scripts', '_sf_scripts_galleria', 10);
 
 //do that good voodoo that you do
 add_action('wp_footer', '_sf_galleriaSetup');
