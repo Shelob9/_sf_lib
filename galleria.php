@@ -9,8 +9,8 @@
 //add galleria js
 
 function _sf_scripts_galleria() {
-	wp_enqueue_script('galleria', get_stylesheet_directory_uri().'/js/galleria-1.2.9.js', array('jquery'), false, true);
-	wp_enqueue_style('galleria', get_stylesheet_directory_uri().'/css/galleria.classic.css');
+	wp_enqueue_script('galleria', get_template_directory_uri().'/lib/js/galleria-1.2.9.js', array('jquery'), false, true);
+	wp_enqueue_style('galleria', get_template_directory_uri().'/lib/css/galleria.classic.css');
 }
 add_action('wp_enqueue_scripts', '_sf_scripts_galleria', 10);
 
@@ -38,7 +38,7 @@ function _sf_galleriaSetup() {
 	
 	/*Setup Galleria*/
 	//but first put location of theme js in a $themejs
-	$themejs = get_stylesheet_directory_uri().'/js/galleria.classic.min.js';
+	$themejs = get_template_directory_uri().'/lib/js/galleria.classic.min.js';
 	echo "
 		//left and right arrows control from keyboard
 		 Galleria.ready(function() {
