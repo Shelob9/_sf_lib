@@ -1,15 +1,14 @@
 <?php
 /**
 *
-* @ package _sf-frank-child
-* @ since 0.1
+* @ package _sf
+* @ since 1.1.0
 *
 */
 
 //add galleria js
 
 function _sf_scripts_galleria() {
-	wp_enqueue_script('galleria', get_template_directory_uri().'/lib/js/galleria-1.2.9.js', array('jquery'), false, true);
 	wp_enqueue_script('galleria', get_template_directory_uri().'/lib/js/galleria-1.2.9.min.js', array('jquery'), false, true);
 	wp_enqueue_style('galleria', get_template_directory_uri().'/lib/css/galleria.classic.css');
 }
