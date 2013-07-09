@@ -10,6 +10,7 @@
 
 function _sf_scripts_galleria() {
 	wp_enqueue_script('galleria', get_template_directory_uri().'/lib/js/galleria-1.2.9.js', array('jquery'), false, true);
+	wp_enqueue_script('galleria', get_template_directory_uri().'/lib/js/galleria-1.2.9.min.js', array('jquery'), false, true);
 	wp_enqueue_style('galleria', get_template_directory_uri().'/lib/css/galleria.classic.css');
 }
 add_action('wp_enqueue_scripts', '_sf_scripts_galleria', 10);
