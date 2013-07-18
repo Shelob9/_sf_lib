@@ -36,6 +36,7 @@ if (! function_exists('_sf_scripts_foundation') ) :
 function _sf_scripts_foundation() {
 //scripts
 	wp_enqueue_script('foundation-js', get_template_directory_uri().'/lib/js/foundation.min.js', array( 'jquery' ), false, true);
+	wp_enqueue_script('post-reveal', get_stylesheet_directory_uri().'/lib/js/post-reveal.js', array('jquery', 'foundation-js'), false, false);
 	wp_enqueue_script('modernizer', get_template_directory_uri().'/lib/js/custom.modernizr.js');
 //styles
 	wp_enqueue_style('normalize', get_template_directory_uri().'/lib/css/normalize.css');
@@ -50,6 +51,7 @@ function _sf_js_init_foundation_code() {
 			$(document)
 				.foundation('interchange')
 					.foundation('orbit')
+					.foundation('reveal')
 					.foundation( 
 					'topbar', {stickyClass: 'sticky-topbar'}
 					);
