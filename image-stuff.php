@@ -45,7 +45,7 @@ endif; // !  _sf_get_image_id exists
 * Responsive Image Thing
 *
 */
-if (! get_theme_mod( '_sf_masonry' ) == '' ) :
+
 if (! function_exists('_sf_responsive_img') ) :
 function _sf_responsive_img($html, $post_id, $post_thumbnail_id, $size, $attr) {
 	//make image links
@@ -68,7 +68,7 @@ function _sf_responsive_img($html, $post_id, $post_thumbnail_id, $size, $attr) {
 }
 add_filter('post_thumbnail_html', '_sf_responsive_img', 5, 5);
 endif; // ! _sf_responsive_img exists
-endif; //we're using masonry
+
 /**
 * Conditionally Add Slider For Home Page
 */
