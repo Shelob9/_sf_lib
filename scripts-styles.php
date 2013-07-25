@@ -253,13 +253,13 @@ function _sf_js_init_ajaxMenus($foundation = true, $infScroll = true, $masonry =
 	//backstretch
 	if ($backstretch != false ) {
 		//check if the backstretch functions exist, which they only do if any options are set to use it. If so reinitialize it.
-		if ( function_exists('_sf_scripts_backstretch') ) {
-			//use=reinit so backstretch code functions are wrapped right.
-			$use = 'reinit';
-			echo '//re-initialize backstretch
-			';
-			_sf_js_init_backstretch($use);
-		}
+		
+		//use=reinit so backstretch code functions are wrapped right.
+		$use = 'reinit';
+		echo '//re-initialize backstretch
+		';
+		gethen_headerBG($use);
+
 	}
 	
 	echo '
