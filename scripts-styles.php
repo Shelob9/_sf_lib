@@ -50,6 +50,7 @@ function _sf_js_init_foundation_code() {
 			$(document)
 				.foundation('interchange')
 					.foundation('orbit')
+					.foundation('clearing')
 					.foundation( 
 					'topbar', {stickyClass: 'sticky-topbar'}
 					);
