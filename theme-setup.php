@@ -51,7 +51,7 @@ if ( ! function_exists( '_sf_setup' ) ) :
 		/**
 		 * Enable support for Post Formats
 		 */
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery' ) );
 	}
 	add_action( 'after_setup_theme', '_sf_setup' );
 endif; // _sf_setup
