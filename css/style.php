@@ -5,18 +5,15 @@
 * Since 1.0.5
 *
 **/
-add_action('wp_head','_sf_custom_style');
+
 global $options;
+add_action('wp_head','_sf_custom_style');
 
-function _sf_custom_style() {
+function _sf_custom_style($options) {
+echo '<style>';
 
-	echo '
-		#full-slide {background-image:url('.$options['header_img'].');}
-	';
 
 echo '</style>';
-
 }
-
 
  
