@@ -21,7 +21,7 @@ if (! function_exists('_sf_js_init_slideSidebar_code') ) :
 function _sf_js_init_slideSidebar_code() {
 	$out = "
 		$('#secondary').hide();
-		$('#right-menu').toggle( 
+		$('#menu-toggle').toggle( 
 			function() {
 				$('#content').removeClass('large-12').addClass('large-9 push-3');
 				$('#secondary').show();
@@ -45,7 +45,7 @@ if (! function_exists('_sf_slideSidebar_triggers') ) :
 function _sf_slideSidebar_triggers() {
 	$out = '
 		<div class="slideSidebar-trigger">
-			<a id="right-menu" class="button small radius success" href="#" title="Click To Open Menu">Menu</a> 
+			<a id="menu-toggle" class="" href="#" title="Click To Open Menu"></a> 
 		</div>
 	';
     echo $out;
@@ -54,13 +54,15 @@ add_action('before', '_sf_slideSidebar_triggers');
 endif; //! _sf_slideSidebar_triggers exists
 
 if (! function_exists('_sf_sidebar_hider') ) :
-function _sf_sidebar_hider() { ?>
-	<style>
-		#content{
-			z-index: 5;	
-		}
-	</style>
-<?php
+function _sf_sidebar_hider() { 
+	$out = "#content{z-index: 5;}";
+	if ( is_user_logged_in() ) { 
+		$out .= " .slideSidebar-trigger{top:24px;}";
+	}
+	echo "<style>";
+	echo $out;
+	echo "</style>";
+
 }
 add_action('wp_head', '_sf_sidebar_hider');
 endif;
