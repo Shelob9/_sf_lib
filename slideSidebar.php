@@ -29,7 +29,7 @@ function _sf_js_init_slideSidebar_code() {
 				
 			}, 
 			function() {
-				$('#content').removeClass('large-9').addClass('large-12');
+				$('#content').removeClass('large-9 push-3').addClass('large-12');
 				$('#secondary').hide();
 				$('#right-menu').html('Menu');
 				
