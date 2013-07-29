@@ -353,6 +353,47 @@ function _sf_style() {
 add_action( 'wp_enqueue_scripts', '_sf_style' );
 endif; //! _sf_style exists
 
+/**
+* Superfish
+*
+* @since gethen 0.1
+*/
+
+if (! function_exists('_sf_scripts_superfish') ) :
+function _sf_scripts_superfish() {
+//scripts
+	wp_enqueue_script('hover-intent', get_stylesheet_directory_uri().'/lib/js/hoverIntent.js', array( 'jquery' ), false, true);
+	wp_enqueue_script('superfish-js', get_stylesheet_directory_uri().'/lib/js/superfish.min.js', array( 'jquery' ), false, true);
+}
+add_action( 'wp_enqueue_scripts', '_sf_scripts_superfish' );
+endif; //! _sf_scripts_superfish exists
+
+if (! function_exists('_sf_js_init_superfish_code') ) :
+function _sf_js_init_superfish_code() {
+	echo "
+			$('ul.menu').superfish({
+				delay:       100,								// 0.1 second delay on mouseout 
+				animation:   {opacity:'show',height:'show'},	// fade-in and slide-down animation 
+				dropShadows: false								// disable drop shadows 
+			});
+		";
+}
+endif; // if ! _sf_js_init_superfish_code exists
+
+if (! function_exists('_sf_js_init_superfish') ) :
+function _sf_js_init_superfish() { 
+	echo "
+		<script>
+			jQuery(document).ready(function($) {
+	";
+	_sf_js_init_superfish_code();
+	echo "
+			}); //end no conflict wrapper
+		</script>
+	";
+}
+add_action('wp_footer', '_sf_js_init_superfish');
+endif; //! _sf_js_init_superfish
 endif; // ! is_admin
 /**
 * Other scripts
