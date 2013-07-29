@@ -29,16 +29,19 @@ function _sf_js_init_slideSidebar_code($sidebars = 1, $side = 'left') {
 	}
 	else {
 		$out = "
+			$('#secondary').hide();
 			$('#right-menu').toggle( 
 				function() {
-					$('#content').animate({ right: 250 }, 'slow', function() {
-						$('#right-menu').html('Close');
-					});
+					$('#content').removeClass('large-12').addClass('large-9');
+					$('#secondary').show();
+					$('#right-menu').html('Close');
+					
 				}, 
 				function() {
-					$('#content').animate({ right: 0 }, 'slow', function() {
-						$('#right-menu').html('Menu');
-					});
+					$('#content').removeClass('large-9').addClass('large-12');
+					$('#secondary').hide();
+					$('#right-menu').html('Menu');
+					
 				}
 			);
 		";
