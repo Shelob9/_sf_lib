@@ -42,10 +42,10 @@ function _sf_js_init_slideSidebar_code() {
 endif; //! _sf_js_init_slideSidebar_code exists
 
 if (! function_exists('_sf_slideSidebar_triggers') ) :
-function _sf_slideSidebar_triggers($sidebars = 1, $side = 'left') {
+function _sf_slideSidebar_triggers() {
 	$out = '
 		<div class="slideSidebar-trigger">
-			<a id="right-menu" href="#" title="Click To Open Menu">Menu</a> 
+			<a id="right-menu" class="button small radius success" href="#" title="Click To Open Menu">Menu</a> 
 		</div>
 	';
     echo $out;
