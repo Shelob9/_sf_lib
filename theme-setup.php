@@ -126,5 +126,19 @@ function _sf_masonry_width() {
 }
 endif; //_sf_masonry_width exists
 
-
-
+/**
+* Theme Credit Links
+*
+* @since _sf 0.1
+*/
+if (! function_exists('_sf_credit_links') ) :
+function _sf_credit_links() { ?>
+	<div class="site-info large-12 columns">
+		<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_sf' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', '_s' ), 'WordPress' ); ?></a>
+					<span class="sep"> | </span>
+					<?php printf( __( 'Theme: %1$SSecond Foundation by %2$s.', '_sf' ), '_Second Foundation', '<a href="http://ComplexWaveform.com/" rel="designer">Josh Pollock</a>' ); ?>
+	</div><!-- .site-info -->
+<?php
+}
+add_action('tha_footer_bottom', '_sf_credit_links');
+endif; //! _sf_credit_links exists
