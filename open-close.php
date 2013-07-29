@@ -43,15 +43,21 @@ function _sf_open($sidebar = 'value1') {
 	$sidebar = _sf_translate_dropdown_value($sidebar);
 	if ($sidebar == 'none') {
 		echo   '<div id="primary" class="content-area row primary-sidebar-none">';
-		echo   '<div id="content" class="site-content large-12 columns" role="main">';	
+		do_action( 'tha_content_before' );
+		echo   '<div id="content" class="site-content large-12 columns" role="main">';
+		do_action( 'tha_content_top' );	
 	}
 	elseif ($sidebar == 'left') {
 		echo  '<div id="primary" class="content-area row primary-sidebar-left">';
+		do_action( 'tha_content_before' );
 		echo  '<div id="content" class="site-content large-9 push-3 columns" role="main">';
+		do_action( 'tha_content_top' );
 	}
 	else {
 		echo   '<div id="primary" class="content-area row primary-sidebar-right">';
+		do_action( 'tha_content_before' );
 		echo   '<div id="content" class="site-content large-9 columns" role="main">';
+		do_action( 'tha_content_top' );
 	}
 	
 }
@@ -64,12 +70,16 @@ function _sf_close($sidebar = 'value1', $sidebarName = null) {
 	//}
 	$sidebar = _sf_translate_dropdown_value($sidebar);
 	if ($sidebar == 'none') {
+		do_action( 'tha_content_bottom' );
 		echo   '</div><!-- #content -->';
+		do_action( 'tha_content_after' );
 		echo   '</div><!-- #primary -->';
 		echo  get_footer();
 	}
 	else {
+		do_action( 'tha_content_bottom' );
 		echo   '</div><!-- #content -->';
+		do_action( 'tha_content_after' );
 		echo  get_sidebar();
 		echo   '</div><!-- #primary -->';
 		echo  get_footer();

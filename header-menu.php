@@ -9,8 +9,11 @@
 * Create Header, Topbar according to various options
 */
 if (! function_exists('_sf_header') ) :
-function _sf_header() { ?>
+function _sf_header() { 
+	do_action( 'tha_header_before' );
+?>
 <header id="masthead" class="site-header row" role="banner">
+	<?php do_action( 'tha_header_top' ); ?>
 		<div class="row" id="header image">
 			<div class="large-12 columns centered">
 				<?php
@@ -98,9 +101,9 @@ function _sf_header() { ?>
 								</div>
 							</div>
 							<?php } ?>
-						
-		
+	<?php do_action( 'tha_header_bottom' ); ?>	
 	</header><!-- #masthead -->
+	<?php do_action( 'tha_header_after' ); ?>
 <?php } 
 endif; // ! if _sf_header exists
 
