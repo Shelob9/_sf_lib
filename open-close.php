@@ -39,56 +39,25 @@ endif; // ! _sf_translate_dropdown_value exists
 //functions for opening and closing .primary, .content
 if (! function_exists('_sf_open') ) :
 function _sf_open($sidebar = 'value1') {
-
-	$sidebar = _sf_translate_dropdown_value($sidebar);
-	if ($sidebar == 'none') {
-		echo   '<div id="primary" class="content-area row primary-sidebar-none">';
-		echo   '<div id="content" class="site-content large-12 columns" role="main">';	
-	}
-	elseif ($sidebar == 'left') {
-		echo  '<div id="primary" class="content-area row primary-sidebar-left">';
-		echo  '<div id="content" class="site-content large-9 push-3 columns" role="main">';
-	}
-	else {
-		echo   '<div id="primary" class="content-area row primary-sidebar-right">';
-		echo   '<div id="content" class="site-content large-9 columns" role="main">';
-	}
-	
+	echo   '<div id="primary" class="content-area row ">';
+	echo   '<div id="content" class="site-content large-12 columns" role="main">';	
 }
 endif; //! _sf_open exists
 
 if (! function_exists('_sf_close') ) :
 function _sf_close($sidebar = 'value1', $sidebarName = null) {
-	//if ($sidebar == '') {
-	//	$sidebar = 'none';
-	//}
-	$sidebar = _sf_translate_dropdown_value($sidebar);
-	if ($sidebar == 'none') {
-		echo   '</div><!-- #content -->';
-		echo   '</div><!-- #primary -->';
-		echo  get_footer();
-	}
-	else {
-		echo   '</div><!-- #content -->';
-		echo  get_sidebar();
-		echo   '</div><!-- #primary -->';
-		echo  get_footer();
-	}
+	echo   '</div><!-- #content -->';
+	echo  get_sidebar();
+	echo   '</div><!-- #primary -->';
+	echo  get_footer();
 }
 endif; //! _sf_close exists
 
 if (! function_exists('_sf_sidebar_starter') ) :
 function _sf_sidebar_starter($sidebar = 'value1') {
-	$sidebar = _sf_translate_dropdown_value($sidebar);
-	if ($sidebar == 'left') {
-		echo '<div id="secondary" class="widget-area large-3 pull-9 columns" role="complementary">';
-	}
-	elseif ($sidebar == 'none') {
 	
-	}
-	else {	
-		echo '<div id="secondary" class="widget-area large-3 columns" role="complementary">';
-    }
+		echo '<div id="secondary" class="widget-area large-3 columns sidebar-right" role="complementary">';
+    
 }
 endif; // ! _sf_sidebar_starter exists
 
