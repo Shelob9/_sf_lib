@@ -1,0 +1,3 @@
+[submodule "tha"]
+	path = tha
+	url = https://github.com/zamoose/themehookalliance.git
