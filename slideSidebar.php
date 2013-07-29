@@ -78,11 +78,7 @@ if (! function_exists('_sf_sidebar_hider') ) :
 function _sf_sidebar_hider() { ?>
 	<style>
 		#content{
-			background-color: #fff;
-			z-index: 5;
-			
-			
-			
+			z-index: 5;	
 		}
 	</style>
 <?php
