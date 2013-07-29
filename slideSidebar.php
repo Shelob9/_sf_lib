@@ -45,7 +45,7 @@ if (! function_exists('_sf_slideSidebar_triggers') ) :
 function _sf_slideSidebar_triggers() {
 	$out = '
 		<div class="slideSidebar-trigger">
-			<a id="menu-toggle" class="" href="#" title="Click To Open Menu"></a> 
+			<a id="menu-toggle" class="button radius secondary" href="#" title="Click To Open Menu">Menu</a> 
 		</div>
 	';
     echo $out;
@@ -57,7 +57,7 @@ if (! function_exists('_sf_sidebar_hider') ) :
 function _sf_sidebar_hider() { 
 	$out = "#content{z-index: 5;}";
 	if ( is_user_logged_in() ) { 
-		$out .= " .slideSidebar-trigger{top:24px;}";
+		$out .= " #menu-toggle{top:24px;}";
 	}
 	echo "<style>";
 	echo $out;
