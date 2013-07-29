@@ -56,7 +56,7 @@ endif; //! _sf_close exists
 if (! function_exists('_sf_sidebar_starter') ) :
 function _sf_sidebar_starter($sidebar = 'value1') {
 	
-		echo '<div id="secondary" class="widget-area large-3 columns sidebar-right" role="complementary">';
+		echo '<div id="secondary" class="widget-area large-3 columns pull-9 sidebar-right" role="complementary">';
     
 }
 endif; // ! _sf_sidebar_starter exists

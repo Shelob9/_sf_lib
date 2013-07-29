@@ -32,7 +32,7 @@ function _sf_js_init_slideSidebar_code($sidebars = 1, $side = 'left') {
 			$('#secondary').hide();
 			$('#right-menu').toggle( 
 				function() {
-					$('#content').removeClass('large-12').addClass('large-9');
+					$('#content').removeClass('large-12').addClass('large-9 push-3');
 					$('#secondary').show();
 					$('#right-menu').html('Close');
 					
