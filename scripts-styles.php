@@ -185,7 +185,7 @@ add_action( 'wp_enqueue_scripts', '_sf_scripts_ajaxMenus' );
 endif; //! _sf_scripts exists
 
 if (! function_exists('_sf_js_init_ajaxMenus') ) :
-function _sf_js_init_ajaxMenus($foundation = true, $infScroll = true, $masonry = true, $backstretch = true) { 
+function _sf_js_init_ajaxMenus($foundation = true, $infScroll = false, $masonry = false, $backstretch = true) { 
 	echo'
 	<script>
 		jQuery(document).ready(function($) {
