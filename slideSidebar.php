@@ -56,6 +56,7 @@ endif; //! _sf_slideSidebar_triggers exists
 if (! function_exists('_sf_sidebar_hider') ) :
 function _sf_sidebar_hider() { 
 	$out = "#content{z-index: 5;}";
+	$out .= "#menu-toggle, .slideSidebar-trigger{z-index: 110;}";
 	if ( is_user_logged_in() ) { 
 		$out .= " #menu-toggle{top:24px;}";
 	}
