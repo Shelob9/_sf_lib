@@ -76,7 +76,7 @@ endif; //! _sf_js_init_foundation
 *Infinite Scroll
 * 	Method from: http://wptheming.com/2012/03/infinite-scroll-to-wordpress-theme/
 */
-
+/* DISABLED DUE TO INFINITE SCROLL INCOMPATIBILITY
 //first test to see if we need infinite scroll:
 if (  (get_theme_mod( '_sf_inf-scroll' ) == '' ) &&  (! get_theme_mod( '_sf_masonry' ) == '' ) ) :
 if (! function_exists('_sf_scripts_infScroll') ) :
@@ -120,6 +120,7 @@ add_action('wp_footer', '_sf_js_init_infScroll', 10);
 
 endif; //! _sf_js_init_infScroll
 endif; //we need infscroll
+*/
 
 /**
 *masonry
@@ -229,7 +230,7 @@ function _sf_js_init_ajaxMenus($foundation = true, $infScroll = true, $masonry =
 		echo '//re-initialize foundation';
 		_sf_js_init_foundation_code();
 	}
-	
+	/* DISABLED DUE TO INFINITE SCROLL INCOMPATIBILITY
 	//infinite scroll
 	if ($infScroll != false ) {
 		//check if the infinite scroll functions exist, which they only do if any options are set to use it. If so reinitialize it.
@@ -239,7 +240,7 @@ function _sf_js_init_ajaxMenus($foundation = true, $infScroll = true, $masonry =
 				_sf_js_init_infScroll_code();
 		}
 	}
-	
+	*/
 	//masonry
 	if ($masonry != false ) {
 		//check if the masonry exist, which they only do if any options are set to use it. If so reinitialize it.

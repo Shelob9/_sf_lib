@@ -254,6 +254,7 @@ function _sf_customize_register( $wp_customize ){
 /**
 * Fancy JS
 */
+/* DISABLED DUE TO INFINITE SCROLL INCOMPATIBILITY
     //  ============================
     //  = Disable Infinite Scroll? =
     //  =============================
@@ -269,6 +270,7 @@ function _sf_customize_register( $wp_customize ){
         'section' => '_sf_page_options',
         )
     );
+*/
     //  ============================
     //  = Disable AJAX Page Loads? =
     //  ============================
