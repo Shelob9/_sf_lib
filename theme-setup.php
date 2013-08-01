@@ -129,16 +129,25 @@ endif; //_sf_masonry_width exists
 /**
 * Theme Credit Links
 *
-* @since _sf 0.1
+* @since gethen 0.1
 */
 if (! function_exists('_sf_credit_links') ) :
-function _sf_credit_links() { ?>
-	<div class="site-info large-12 columns">
+function _sf_credit_links() { 
+	global $options;
+?>
+		<div class="site-info large-12 columns">
+		<span class="footer-text"><?php echo $options['footer_text']; ?>&nbsp;</span>
+		<?php 
+			if ( $options['remove_credit'] != 'yes') : 
+		?>
 		<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_sf' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', '_s' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$SSecond Foundation by %2$s.', '_sf' ), '_Second Foundation', '<a href="http://ComplexWaveform.com/" rel="designer">Josh Pollock</a>' ); ?>
+					<?php printf( __( 'Theme: %1$SGethen by %2$s.', '_sf' ), 'Gethen', '<a href="http://ComplexWaveform.com/" rel="designer">Josh Pollock</a>' ); ?>
+		<?php 
+			endif; //$options['remove_credit'] != 'no';
+		?>
 	</div><!-- .site-info -->
 <?php
 }
-add_action('tha_footer_bottom', '_sf_credit_links');
+add_action('_sf_credit_links', '_sf_credit_links');
 endif; //! _sf_credit_links exists
