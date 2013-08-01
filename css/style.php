@@ -71,28 +71,28 @@ echo '<style>'; ?>
 	<?php
 
 	//if the background for the header is not set to transparent use $header_bg_color else just let it transparent.
-	if (! get_theme_mod( 'header-trans-bg' ) == '' ) { 	
+	if ( get_theme_mod( 'header-trans-bg' ) == '' ) { 	
 		echo '#masthead {background-color:';
 		echo $header_bg_color;
 		echo '}';
 	}
 	
 	//if the background for the sidebar is not set to transparent use $sidebar_bg_color else just let it transparent.
-	if (! get_theme_mod( 'sidebar-trans-bg' ) == '' ) { 	
+	if ( get_theme_mod( 'sidebar-trans-bg' ) == '' ) { 	
 		echo '#secondary {background-color:';
 		echo $sidebar_bg_color;
 		echo '}';
 	}
 	
 	//if the background for the footer is not set to transparent set background color.
-	if (! get_theme_mod( 'footer-trans-bg' ) == '' ) { 	
+	if ( get_theme_mod( 'footer-trans-bg' ) == '' ) { 	
 		echo '.site-footer {background-color:';
 		echo $footer_bg_color;
 		echo '}';
 	}
 	
 	//if the background for the content is not set to transparent set background color.
-	if (! get_theme_mod( 'content-trans-bg' ) == '' ) { 
+	if ( get_theme_mod( 'content-trans-bg' ) == '' ) { 
 		echo '#primary {background-color:';
 		echo $content_bg_color;
 		echo '}';

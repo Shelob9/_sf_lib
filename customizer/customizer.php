@@ -562,7 +562,7 @@ function _sf_customize_register( $wp_customize ){
     'content-trans-bg',
     array(
         'type' => 'checkbox',
-        'label' => 'Use A Background Color For Content Area, If Not Using An Image Background?',
+        'label' => 'Transparent Content Area Background?',
         'section' => '_sf_background_options',
         'priority' => '23',
         )
@@ -576,7 +576,7 @@ function _sf_customize_register( $wp_customize ){
     'header-trans-bg',
     array(
         'type' => 'checkbox',
-        'label' => 'Use A Background Color For Header Area, If Not Using An Image Background?',
+        'label' => 'Transparent Header Background?',
         'section' => '_sf_background_options',
         'priority' => '13',
         )
@@ -590,7 +590,7 @@ function _sf_customize_register( $wp_customize ){
     'sidebar-trans-bg',
     array(
         'type' => 'checkbox',
-        'label' => 'Use A Background Color For Sidebar Area',
+        'label' => 'Transparent Sidebar Background?',
         'section' => '_sf_background_options',
         'priority' => '30',
         )
@@ -604,7 +604,7 @@ function _sf_customize_register( $wp_customize ){
     'footer-trans-bg',
     array(
         'type' => 'checkbox',
-        'label' => 'Use A Background Color For Footer Area',
+        'label' => 'Transparent Footer Background?',
         'section' => '_sf_background_options',
         'priority' => '40',
         )
