@@ -27,7 +27,7 @@ if ( ! function_exists( '_sf_setup' ) ) :
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
 		 * If you're building a theme based on _s, use a find and replace
-		 * to change '_s' to the name of your theme in all the template files
+		 * to change '_sf' to the name of your theme in all the template files
 		 */
 		load_theme_textdomain( '_sf', get_template_directory() . '/languages' );
 
@@ -62,7 +62,7 @@ endif; // _sf_setup
 if (! function_exists('_sf_widgets_init') ) :
 function _sf_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', '_s' ),
+		'name'          => __( 'Sidebar', '_sf' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -134,7 +134,7 @@ endif; //_sf_masonry_width exists
 if (! function_exists('_sf_credit_links') ) :
 function _sf_credit_links() { ?>
 	<div class="site-info large-12 columns">
-		<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_sf' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', '_s' ), 'WordPress' ); ?></a>
+		<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_sf' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', '_sf' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
 					<?php printf( __( 'Theme: %1$SSecond Foundation by %2$s.', '_sf' ), '_Second Foundation', '<a href="http://ComplexWaveform.com/" rel="designer">Josh Pollock</a>' ); ?>
 	</div><!-- .site-info -->

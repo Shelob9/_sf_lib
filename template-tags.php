@@ -31,18 +31,18 @@ function _sf_comment( $comment, $args, $depth ) {
 			<footer>
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', '_s' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', '_sf' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', '_s' ); ?></em>
+					<em><?php _e( 'Your comment is awaiting moderation.', '_sf' ); ?></em>
 					<br />
 				<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', '_s' ), get_comment_date(), get_comment_time() ); ?>
+					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', '_sf' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( 'Edit', '_s' ), '<span class="edit-link">', '<span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', '_sf' ), '<span class="edit-link">', '<span>' ); ?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
 
@@ -64,7 +64,7 @@ if ( ! function_exists( '_sf_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function _sf_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>', '_s' ),
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>', '_sf' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
