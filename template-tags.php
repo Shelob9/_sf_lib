@@ -115,27 +115,51 @@ add_action( 'edit_category', '_sf_category_transient_flusher' );
 add_action( 'save_post', '_sf_category_transient_flusher' );
 endif; //! if _sf_category_transient_flusher exists
 
-
-
-
-if ( ! function_exists( '_sf_content_nav' ) ) :
 /**
  * Displays navigation to next/previous pages when applicable.
  *
- * @From Twenty Twelve 1.0
- * @since _sf 0.1
+ * From Twenty Twelve 1.0
+ * @ package _sf
+ * @ since 0.1
  */
+ if ( ! function_exists( '_sf_content_nav' ) ) :
 function _sf_content_nav( $html_id ) {
 	global $wp_query;
 
 	$html_id = esc_attr( $html_id );
-
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
 			<h3 class="assistive-text"><?php _e( 'Post navigation', '_sf' ); ?></h3>
-			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
+			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_sf' ) ); ?></div>
 			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_sf' ) ); ?></div>
 		</nav><!-- #<?php echo $html_id; ?> .navigation -->
 	<?php endif;
 }
 endif; //! _sf_content_nav exists
+
+
+/**
+ * Displays navigation In masonry loop
+ *
+ * From Twenty Twelve 1.0
+ * @ package _sf
+ * @ since 1.1.2
+ */
+if ( ! function_exists( '_sf_masonry_nav' ) ) :
+function _sf_masonry_nav( $html_id ) {
+	global $wp_query;
+
+	$html_id = esc_attr( $html_id );
+	if ( $wp_query->max_num_pages > 1 ) : ?>
+	<div class="row">
+		<nav id="<?php echo $html_id; ?>" class="clearfix large-6 columns large-centered navigation masonry-nav panel radius" role="navigation">
+			<h3 class="assistive-text" id="masonry-nav-title"><?php _e( 'More Posts', '_sf' ); ?></h3>
+			<div id="masonry-navs">
+				<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older', '_sf' ) ); ?></div>
+				<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer <span class="meta-nav">&rarr;</span>', '_sf' ) ); ?></div>
+			</div>
+		</nav><!-- #<?php echo $html_id; ?> .navigation -->
+	</div>
+	<?php endif;
+}
+endif; //! _sf_masonry_nav exists
