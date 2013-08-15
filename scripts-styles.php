@@ -169,7 +169,7 @@ endif; //do we need masonry?
 * Ajax Menus
 * 	method from: http://wptheming.com/2011/12/ajax-themes/
 * For _sf_js_init_ajaxMenus: 
-*	@params (since 1.1.0) (all optional) (all default = true) - $foundation, $infScroll, $masonry, $backstretch
+*	@params (since 1.1.0) (all optional) (all default = true) -  $infScroll, $masonry, $backstretch
 *		If set to false, script will not be reinitialized.
 */
 
@@ -185,7 +185,7 @@ add_action( 'wp_enqueue_scripts', '_sf_scripts_ajaxMenus' );
 endif; //! _sf_scripts exists
 
 if (! function_exists('_sf_js_init_ajaxMenus') ) :
-function _sf_js_init_ajaxMenus($foundation = true, $infScroll = true, $masonry = true, $backstretch = true) { 
+function _sf_js_init_ajaxMenus($infScroll = true, $masonry = true, $backstretch = true) { 
 	echo'
 	<script>
 		jQuery(document).ready(function($) {
@@ -226,10 +226,10 @@ function _sf_js_init_ajaxMenus($foundation = true, $infScroll = true, $masonry =
 	';
 	//reinitialize scripts
 	//foundation
-	if ($foundation != false ) {
-		echo '//re-initialize foundation';
-		_sf_js_init_foundation_code();
-	}
+	
+	echo '//re-initialize foundation';
+	_sf_js_init_foundation_code();
+	
 	/* DISABLED DUE TO INFINITE SCROLL INCOMPATIBILITY
 	//infinite scroll
 	if ($infScroll != false ) {
