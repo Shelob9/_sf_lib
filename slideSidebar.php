@@ -50,7 +50,7 @@ function _sf_slideSidebar_triggers() {
 	';
     echo $out;
 }
-add_action('before', '_sf_slideSidebar_triggers');
+add_action('tha_header_before', '_sf_slideSidebar_triggers');
 endif; //! _sf_slideSidebar_triggers exists
 
 if (! function_exists('_sf_sidebar_hider') ) :
