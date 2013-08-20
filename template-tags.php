@@ -152,7 +152,7 @@ function _sf_masonry_nav( $html_id ) {
 	$html_id = esc_attr( $html_id );
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 	<div class="row">
-		<nav id="<?php echo $html_id; ?>" class="clearfix large-6 columns large-centered navigation masonry-nav panel radius" role="navigation">
+		<nav id="<?php echo $html_id; ?>" class="clearfix large-6 columns large-offset-3 small-offset-1 navigation masonry-nav panel radius" role="navigation">
 			<h3 class="assistive-text" id="masonry-nav-title"><?php _e( 'More Posts', '_sf' ); ?></h3>
 			<div id="masonry-navs">
 				<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older', '_sf' ) ); ?></div>
