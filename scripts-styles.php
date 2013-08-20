@@ -124,7 +124,8 @@ endif; //we need infscroll
 
 /**
 *masonry
-* @since 1.1.0 using Masonry 3.0.1
+* since 1.1.0 using Masonry 3.0.1
+* since 1.1.4 using imagesLoaded
 */
 
 //first check if masonry is being used, if so do all the things we need, if not fuck it.
@@ -133,7 +134,8 @@ if (! function_exists('_sf_scripts_masonry') ) :
 function _sf_scripts_masonry() {
 	//deregister built in jQuery since it is old.
 	wp_deregister_script('jquery-masonry');
-	wp_enqueue_script('jquery-masonry', get_template_directory_uri().'/lib/js/masonry.pkgd.min.js', array('jquery'), false, true );
+	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/lib/js/imagesloaded.pkgd.min.js', false, null, true);
+	wp_enqueue_script('jquery-masonry', get_template_directory_uri().'/lib/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), null, true );
 }
 add_action( 'wp_enqueue_scripts', '_sf_scripts_masonry' );
 endif; //! _sf_scripts_masonry exists
@@ -141,8 +143,13 @@ endif; //! _sf_scripts_masonry exists
 if (! function_exists('_sf_js_init_masonry_code') ) :
 function _sf_js_init_masonry_code() {
 	echo "
-			$('#masonry-loop').masonry({
-			  itemSelector: '.masonry-entry'
+			var container = document.querySelector('#masonry-loop');
+			var msnry;
+			// initialize Masonry after all images have loaded
+			imagesLoaded( container, function() {
+				msnry = new Masonry( container, {
+			   		itemSelector: '.masonry-entry'
+			   	});
 			});
 		";
 }
