@@ -728,8 +728,23 @@ $wp_customize->add_setting(
     //  ============
     //  = Masonry =
     //  ===========
-    //TODO: seperate settings for mobile.
-    
+
+
+    // Use Masonry?
+	$wp_customize->add_setting(
+    '_sf_masonry'
+    );
+
+    $wp_customize->add_control(
+    '_sf_masonry',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Disable Masonry?', '_sf'),
+        'section' => '_sf_masonry_options',
+        'priority' => 1
+        )
+    );
+
     //How many bricks Wide?
     $wp_customize->add_setting(
     	'masonry_how_many',
