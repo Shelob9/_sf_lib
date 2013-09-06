@@ -123,9 +123,12 @@ endif; //we need infscroll
 */
 
 /**
-*masonry
+* Masonry
+*
 * since 1.1.0 using Masonry 3.0.1
 * since 1.1.4 using imagesLoaded
+*
+* @since 1.1.4
 */
 
 //first check if masonry is being used, if so do all the things we need, if not fuck it.
@@ -177,13 +180,12 @@ endif; //! _sf_js_init_masonry
 */
 if ( ! function_exists('_sf_masonry_mobile') ) :
 function _sf_masonry_mobile() {
-	$masonryMobile = get_theme_mod ('_sf_masonry_mobile');
-	if ( $masonryMobile == '' ) { 
-		remove_action( 'wp_footer', '_sf_js_init_masonry' );
-		remove_action( 'wp_enqueue_scripts', '_sf_scripts_masonry' );
-	}
+	remove_action( 'wp_footer', '_sf_js_init_masonry' );
+	remove_action( 'wp_enqueue_scripts', '_sf_scripts_masonry' );
 }
-add_action('init', '_sf_masonry_mobile');
+if ( wp_is_mobile() && get_theme_mod ('_sf_masonry_mobile') == '' ) { 
+	add_action('init', '_sf_masonry_mobile');
+}
 endif; // ! _sf_masonry_mobile exists
 
 endif; //do we need masonry?
