@@ -97,10 +97,12 @@ endif; //! _sf_new_excerpt_more exists
 
 if (! function_exists('_sf_custom_excerpt_length') ) :
 function _sf_custom_excerpt_length( $length ) {
-	//get the value of the masonry excerpt length option, or set it to 10 if !isset
-	$masonry_excerpt_length = get_theme_mod('masonry_excerpt_length', 10);
-	//if masonry functions exists, since we're using it set using $masonry_excerpt_length, else leave at 55.
-	if (function_exists('_sf_scripts_masonry')) {
+	if (function_exists('_sf_scripts_masonry') && ! wp_is_mobile() ) {
+		$masonry_excerpt_length = get_theme_mod('masonry_excerpt_length', 25);
+		return $masonry_excerpt_length;
+	}
+	elseif ( function_exists('_sf_scripts_masonry') && wp_is_mobile() ) {
+		$masonry_excerpt_length = get_theme_mod('masonry_mobileExcerpt_length', 10);
 		return $masonry_excerpt_length;
 	}
 	else {
@@ -117,12 +119,22 @@ endif; // ! _sf_custom_excerpt_length exists
 
 if (! function_exists('_sf_masonry_width') ) :
 function _sf_masonry_width() {
-	//get the theme_mod that tells us how many wide we want to go. If it isn't set return 4 so we don't get an error. 4 is a nice looking number.
-	$howmany = get_theme_mod('masonry_how_many', 4);
-	//divide that by 100 to get the percent width
-	$percent = 100/$howmany;
-	//echo it with a % sign.
-	echo $percent.'%;';
+	if (wp_is_mobile() ) {
+		//get the theme_mod that tells us how many wide we want to go. If it isn't set return 2 so we don't get an error. 2 is a nice looking number.
+		$howmany = get_theme_mod('masonry_mobileHow_many', 2);
+		//divide that by 100 to get the percent width
+		$percent = 100/$howmany;
+		//echo it with a % sign.
+		echo $percent.'%;';
+	}
+	else {
+		//get the theme_mod that tells us how many wide we want to go. If it isn't set return 4 so we don't get an error. 4 is a nice looking number.
+		$howmany = get_theme_mod('masonry_how_many', 4);
+		//divide that by 100 to get the percent width
+		$percent = 100/$howmany;
+		//echo it with a % sign.
+		echo $percent.'%;';
+	}
 }
 endif; //_sf_masonry_width exists
 
