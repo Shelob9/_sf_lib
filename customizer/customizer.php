@@ -792,7 +792,7 @@ $wp_customize->add_setting(
     '_sf_masonry_mobile',
     array(
         'type' => 'checkbox',
-        'label' => __('Disable Masonry On Mobile?', '_sf'),
+        'label' => __('Use Masonry On Mobile? (Masonry Must Be Enabled)', '_sf'),
         'section' => '_sf_masonry_options',
         'priority' => 201
         )
