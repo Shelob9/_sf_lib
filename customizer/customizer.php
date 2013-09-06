@@ -834,6 +834,21 @@ $wp_customize->add_setting(
     		'priority' => 220,
     	)
     );
+    
+    //mobile show excerpt
+ 	$wp_customize->add_setting(
+    '_sf_masonry_mobileExcerpt'
+    );
+
+    $wp_customize->add_control(
+    '_sf_masonry_mobileExcerpt',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Show Excerpt In Mobile Masonry Box?', '_sf'),
+			'section' => '_sf_masonry_options',
+			'priority' => '250',
+			)
+    );
    	
    	
     //masonry colors
