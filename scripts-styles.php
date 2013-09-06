@@ -167,8 +167,25 @@ function _sf_js_init_masonry() {
 		</script>
 	";
 }
-	add_action('wp_footer', '_sf_js_init_masonry');
+add_action('wp_footer', '_sf_js_init_masonry');
 endif; //! _sf_js_init_masonry
+
+/**
+* Optionally Disable Masonry For Mobile
+*
+* @since 1.1.4
+*/
+if ( ! function_exists('_sf_masonry_mobile') ) :
+function _sf_masonry_mobile() {
+	$masonryMobile = get_theme_mod ('_sf_masonry_mobile');
+	if ( $masonryMobile == '' ) { 
+		remove_action( 'wp_footer', '_sf_js_init_masonry' );
+		remove_action( 'wp_enqueue_scripts', '_sf_scripts_masonry' );
+	}
+}
+add_action('init', '_sf_masonry_mobile');
+endif; // ! _sf_masonry_mobile exists
+
 endif; //do we need masonry?
 //
 
@@ -249,7 +266,8 @@ function _sf_js_init_ajaxMenus($infScroll = true, $masonry = true, $backstretch 
 	}
 	*/
 	//masonry
-	if ($masonry != false ) {
+	$masonryMobile = get_theme_mod ('_sf_masonry_mobile');
+	if ($masonry != false || $masonryMobile == '' ) {
 		//check if the masonry exist, which they only do if any options are set to use it. If so reinitialize it.
 		if ( function_exists('_sf_js_init_masonry') ) {
 		echo '//re-initialize masonry
