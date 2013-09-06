@@ -782,6 +782,60 @@ $wp_customize->add_setting(
    			)
    	);
    	
+   	//MOBILE MASONRY CONTROLS
+   	// Disable Masonry On Mobile?
+	$wp_customize->add_setting(
+    '_sf_masonry_mobile'
+    );
+
+    $wp_customize->add_control(
+    '_sf_masonry_mobile',
+    array(
+        'type' => 'checkbox',
+        'label' => __('Disable Masonry On Mobile?', '_sf'),
+        'section' => '_sf_masonry_options',
+        'priority' => 201
+        )
+    );
+   	//Mobile How long is excerpt?
+    $wp_customize->add_setting(
+   	'masonry_mobileExcerpt_length',
+   		array(
+   			'default' => 10,
+   		)
+   	);
+   	
+   	$wp_customize->add_control(
+   	'masonry_mobileExcerpt_length',
+   		array (
+   			'type' => 'text',
+   			'label' => __('Masonry Mobile Excerpt Length (enter numbers only)', '_sf'),
+   			'section' => '_sf_masonry_options',
+   			'callback' => '_sf_sanitize_number',
+   			'priority' => 210,
+   			)
+   	);
+   	
+   	 //Mobile How many bricks Wide?
+    $wp_customize->add_setting(
+    	'masonry_mobileHow_many',
+    		array(
+    			'default' => 2,
+    		)
+    );
+    
+    $wp_customize->add_control(
+    'masonry_mobileHow_many',
+    	array(
+    		'type' => 'text',
+    		'label' => __('How Many Bricks Per Row On Mobile?', '_sf'),
+    		'section' => '_sf_masonry_options',
+    		'callback' => '_sf_sanitize_number',
+    		'priority' => 220,
+    	)
+    );
+   	
+   	
     //masonry colors
 	$masonry[] = array(
 		'slug'=>'masonry_bg_color', 
