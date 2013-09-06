@@ -36,6 +36,12 @@ function _sf_customize_register( $wp_customize ){
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+//define some colors in variables
+$fLightBlue = '#2ba6cb';
+$fBlack = '#222';
+$fSilver = '#e9e9e9';
+
 /**
 * Sections
 */
