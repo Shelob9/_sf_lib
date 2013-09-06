@@ -757,7 +757,7 @@ $wp_customize->add_setting(
     '_sf_masonry_excerpt',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Show Excerpt In Masonry Box?', '_sf'),
+			'label' => __('Hide Excerpt In Masonry Box?', '_sf'),
 			'section' => '_sf_masonry_options',
 			'priority' => '50',
 			)
@@ -844,7 +844,7 @@ $wp_customize->add_setting(
     '_sf_masonry_mobileExcerpt',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Show Excerpt In Mobile Masonry Box?', '_sf'),
+			'label' => __('Hide Excerpt In Mobile Masonry Box?', '_sf'),
 			'section' => '_sf_masonry_options',
 			'priority' => '250',
 			)
