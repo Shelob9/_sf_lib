@@ -165,12 +165,12 @@ $fSilver = '#e9e9e9';
 	
 	$slider[] = array(
 		'slug'=>'slider_bg_color', 
-		'default' => '',
+		'default' => $fSilver,
 		'label' => __('Slider Background Color', 'sf')
 	);
 	$slider[] = array(
 		'slug'=>'slider_title_color', 
-		'default' => '#',
+		'default' => $fBlack,
 		'label' => __('Slider Title Color', 'sf')
 	);
 	$slider[] = array(
@@ -185,7 +185,7 @@ $fSilver = '#e9e9e9';
 	);
 	$slider[] = array(
 		'slug'=>'slider_excerpt_text_color',
-		'default' => '',
+		'default' => $fBlack,
 		'label' => __('Slider Excerpt Color', '_sf')
 	);
 		foreach( $slider as $color ) {
@@ -292,22 +292,7 @@ $fSilver = '#e9e9e9';
         'section' => '_sf_page_options',
         )
     );
-    //  ============================
-    //  = Use Masonry? =
-    //  ============================
-	$wp_customize->add_setting(
-    '_sf_masonry'
-    );
-
-    $wp_customize->add_control(
-    '_sf_masonry',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Disable Masonry?', '_sf'),
-        'section' => '_sf_masonry_options',
-        )
-    );
-
+    
  
 /**
 * Color Controls
@@ -387,22 +372,22 @@ $fSilver = '#e9e9e9';
 //content area colors
 	$content[] = array(
 	'slug'=>'content_text_color', 
-	'default' => '#000',
+	'default' => $fBlack,
 	'label' => __('Content Text Color', 'sf')
 	);
 	$content[] = array(
 		'slug'=>'content_link_color', 
-		'default' => '#fff',
+		'default' => $fLightBlue,
 		'label' => __('Content Link Color', 'sf')
 	);
 	$content[] = array(
 		'slug'=>'post_title_color', 
-		'default' => '#fff',
+		'default' => $fBlack,
 		'label' => __('Post Title Color', 'sf')
 	);
 	$content[] = array(
 		'slug'=>'page_title_color', 
-		'default' => '#fff',
+		'default' => $fBlack,
 		'label' => __('Page Title Color', 'sf')
 	);
 	
@@ -436,12 +421,12 @@ $fSilver = '#e9e9e9';
 	);
 	$sidebar[] = array(
 		'slug'=>'sidebar_link_color', 
-		'default' => '#fff',
+		'default' => $fLightBlue,
 		'label' => __('Sidebar Link Color', 'sf')
 	);
 	$sidebar[] = array(
 		'slug'=>'widget_title_color', 
-		'default' => '#000',
+		'default' => $fBlack,
 		'label' => __('Widget Title Color', 'sf')
 	);
 			foreach( $sidebar as $color ) {
@@ -471,7 +456,7 @@ $fSilver = '#e9e9e9';
 
 	$readmore[] = array(
 	'slug'=>'excerpt_button_text_color', 
-	'default' => '#fff',
+	'default' => $fBlack,
 	'label' => __('Read More Button Text Color', 'sf')
 	);
 	$readmore[] = array(
@@ -782,7 +767,7 @@ $wp_customize->add_setting(
     $wp_customize->add_setting(
    	'masonry_excerpt_length',
    		array(
-   			'default' => '10',
+   			'default' => '25',
    		)
    	);
    	
@@ -859,12 +844,12 @@ $wp_customize->add_setting(
 	);
 	$masonry[] = array(
 	'slug'=>'masonry_excerpt_text_color', 
-	'default' => ' ',
+	'default' => '#000',
 	'label' => __('Excerpt Text Color', '_sf')
 	);
 	$masonry[] = array(
 		'slug'=>'masonry_title_color', 
-		'default' => ' ',
+		'default' => $fLightBlue,
 		'label' => __('Title Color', '_sf')
 	);
 	$masonry[] = array(
