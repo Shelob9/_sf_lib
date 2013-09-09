@@ -148,7 +148,12 @@ function _sf_masonry_loop() {
 	echo '<div id="masonry-loop"><!--start masonry-loop-->';
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
-		get_template_part( 'content', 'masonry' );
+			// remove the interchange filer filter
+			remove_filter('post_thumbnail_html', '_sf_responsive_img', 5, 5);
+			// output masonry template
+			get_template_part( 'content', 'masonry' );
+			// add the filter back
+			add_filter('post_thumbnail_html', '_sf_responsive_img', 5, 5);
 		endwhile;
 	echo '</div><!--end masonry-loop-->';
 	_sf_masonry_nav( 'nav-below' ); 
