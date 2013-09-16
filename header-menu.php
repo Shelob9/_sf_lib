@@ -10,11 +10,10 @@
 */
 if (! function_exists('_sf_header') ) :
 function _sf_header() { 
-	do_action( 'tha_header_before' );
 ?>
 <header id="masthead" class="site-header row" role="banner">
 	<?php do_action( 'tha_header_top' ); ?>
-		<div class="row" id="header image">
+		<div class="row" id="banner">
 			<div class="large-12 columns centered">
 				<?php
 					$header_image = get_header_image();
