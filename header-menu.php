@@ -11,8 +11,6 @@
 if (! function_exists('_sf_header') ) :
 function _sf_header() { 
 ?>
-<header id="masthead" class="site-header row" role="banner">
-	<?php do_action( 'tha_header_top' ); ?>
 		<div class="row" id="banner">
 			<div class="large-12 columns centered">
 				<?php
@@ -99,11 +97,10 @@ function _sf_header() {
 									<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>	
 								</div>
 							</div>
-							<?php } ?>
-	<?php do_action( 'tha_header_bottom' ); ?>	
-	</header><!-- #masthead -->
-	<?php do_action( 'tha_header_after' ); ?>
-<?php } 
+							<?php } 
+	
+} 
+add_action('tha_header_top', '_sf_header');
 endif; // ! if _sf_header exists
 
 /**
