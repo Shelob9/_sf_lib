@@ -17,7 +17,7 @@ function _sf_custom_style() {
 	$menu_text_color = get_option('menu_text_color');
 	$site_name_color = get_option('site_name_color');
 	$content_bg_color = get_option('content_bg_color');
-	$header_bg_color = get_option('header_bg_color');
+	$header_bg_color = get_option('header_bg_color', '#fff');
 	$menu_bg_color = get_option('menu_bg_color');
 	$menu_hover_color = get_option('menu_hover_color');
 	$search_but_txt = get_option('menu_search_txt_color');
@@ -26,7 +26,7 @@ function _sf_custom_style() {
 	$search_but_bg_hv = get_option('menu_search_bg_color_hv');
 	$page_bg_color = get_option('page_bg_color');
 	$sidebar_bg_color = get_option('sidebar_bg_color');
-	$footer_bg_color = get_option('footer_bg_color');
+	$footer_bg_color = get_option('footer_bg_color', '#fff');
 	$masonry_bg_color = get_option('masonry_bg_color');
 	$masonry_excerpt_text_color = get_option('masonry_excerpt_text_color');
 	$masonry_title_color = get_option('masonry_title_color');
